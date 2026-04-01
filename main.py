@@ -17,38 +17,21 @@ def main() -> QuerySet:
         Genre(name=name) for name in genres_names
     ]
 
-    actors = [
-        Actor(
-            first_name="George",
-            last_name="Klooney"
-        ),
-        Actor(
-            first_name="Kianu",
-            last_name="Reaves"
-        ),
-        Actor(
-            first_name="Will",
-            last_name="Smith"
-        ),
-        Actor(
-            first_name="Jaden",
-            last_name="Smith"
-        ),
+    actors_data = [
+        ("George", "Klooney"),
+        ("Kianu", "Reaves"),
+        ("Will", "Smith"),
+        ("Jaden", "Smith"),
+        ("Scarlett", "Keegan"),
+        ("Scarlett", "Johansson"),
     ]
 
-    actresses = [
-        Actor(
-            first_name="Scarlett",
-            last_name="Keegan"
-        ),
-        Actor(
-            first_name="Scarlett",
-            last_name="Johansson"
-        ),
+    actors_to_create = [
+        Actor(first_name=first, last_name=last) for first, last in actors_data
     ]
 
     Genre.objects.bulk_create(genres)
-    Actor.objects.bulk_create(actors + actresses)
+    Actor.objects.bulk_create(actors_to_create)
 
     Genre.objects.filter(
         name="Dramma",
