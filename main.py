@@ -60,11 +60,8 @@ def main() -> QuerySet:
 
     Actor.objects.filter(
         first_name="Kianu",
-    ).update(first_name="Keanu")
-
-    Actor.objects.filter(
-        last_name="Reaves",
-    ).update(last_name="Reeves")
+        last_name="Reaves"
+    ).update(first_name="Keanu", last_name="Reeves")
 
     Genre.objects.filter(
         name="Action",
