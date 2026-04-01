@@ -19,8 +19,8 @@ def main() -> QuerySet:
 
     actors = [
         Actor(
-            first_name= "George",
-            last_name= "Klooney"
+            first_name="George",
+            last_name="Klooney"
         ),
         Actor(
             first_name="Kianu",
